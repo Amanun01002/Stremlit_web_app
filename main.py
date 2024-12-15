@@ -55,11 +55,25 @@ if middle_area_data:
 
 # 諸条件
 Private_room = st.checkbox("個室あり")
+if Private_room:
+    Private_room_key = 1
+else:
+    Private_room_key = 0
+
 free_drink = st.checkbox("飲み放題あり")
+if free_drink:
+    free_drink_key = 1
+else:
+    free_drink_key = 0
+
 free_food = st.checkbox("食べ放題あり")
+if free_food:
+    free_food_key = 1
+else:
+    free_food_key = 0
 
 # 店の最大パーティ人数で絞る
-party_capacity = st.slider('最大宴会収容人数', 1, 1000, 10)
+party_capacity = st.slider('最大宴会収容人数', 1, 500, 10)
 
 # 表示データ数
 count = st.slider('最大表示データ数', 1, 100, 30)
@@ -73,9 +87,9 @@ params = {
     "large_area": large_area_code,
     "middle_area": middle_area_code,
     "small_area": small_area_code,
-    "Private_room":Private_room,
-    "free_drink":free_drink,
-    "free_food":free_food,
+    "Private_room":Private_room_key,
+    "free_drink":free_drink_key,
+    "free_food":free_food_key,
     "party_capacity": party_capacity,
     "count": count
 }
